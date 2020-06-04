@@ -20,18 +20,27 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+    - name: Test with Maven
+      run: mvn test
     - name: Ls
       run:
         ls -la *
     - name: Realization
-      run: echo -e "Identified risks\nFunctional specifications\nTechnical specifications" >> output/realization.txt
+      run: echo -e "Identified risks\nFunctional specifications\nTechnical specifications" >> realization.txt
     - name: cat Realization
-      run: cat output/realization.txt
+      run: cat realization.txt
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar texte/fig3.jd -o output/fig3.jd -svg  
+      run: java -jar JDGenerator-jar-with-dependencies.jar texte/fig3.jd -o output/fig3.jd -svg -svgR -td -rea realization.txt   
     - name: Archive JD&TODO
       uses: actions/upload-artifact@v2
       with: 
         name: GeneratedJD
         path: output/
+    - name: Archive realization.txt
+      uses: actions/upload-artifact@v2
+      with: 
+        name: GeneratedJD
+        path: realization.txt
     
