@@ -32,7 +32,7 @@ jobs:
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o output/basic -svg -svgR -td realization.txt -rea
+      run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o justification/output/basic -svg -svgR -td realization.txt -rea
     - name: Ls 2
       run:
         ls -la *
@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: GeneratedJD
-        path: output/
+        path: justification/output/
     - name: Archive realization.txt
       uses: actions/upload-artifact@v2
       with: 
@@ -59,12 +59,12 @@ jobs:
         git status
         echo "$my_env_var"
     - name: memorise the final result
-      if: false
+      if: true
       run: 
        git config user.name "GitHub Actions";
        git status; 
        echo -e "--------------";
-       git add output/*;
+       git add justification/output/*;
        git commit -m "add output";
        git status;
        echo -e "--------------";
