@@ -26,7 +26,7 @@ jobs:
     - name: Realization
       run: echo -e "Identified risks\nFunctional specifications\nTechnical specifications" >> realization.txt
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar texte/fig3.jd -o output/fig3 -svg -svgR -td realization.txt -rea
+      run: java -jar JDGenerator-jar-with-dependencies.jar justification/fig3.jd -o output/fig3 -svg -svgR -td realization.txt -rea
     - name: Archive JD&TODO
       uses: actions/upload-artifact@v2
       with: 
