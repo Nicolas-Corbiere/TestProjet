@@ -52,7 +52,6 @@ jobs:
         name: jacoco
         path: target/site/jacoco
     - name: memorise the final result
-      if: ${{ job.status == failure}}
       run: 
        git config user.name "GitHub Actions";
        git status; 
@@ -61,5 +60,5 @@ jobs:
        git commit -m "add output";
        git status;
        echo -e "--------------";
-       git push -v;
+       git push -f;
        echo -e "--------------";
