@@ -55,7 +55,7 @@ jobs:
       run: 
        git config user.name "GitHub Actions";
        git rm output/*
-       it commit -m "rm output";
+       git commit -m "rm output";
        git push -v;
        git status; 
        echo -e "--------------";
