@@ -6,6 +6,7 @@ Voici l'état du diagramme Justification correspondant à la dernière intégrat
 
 ![link to Google](https://github.com/Nicolas-Corbiere/TestProjet/blob/master/output/fig3_REA.svg)
 
-test : 
+![link to Google](https://github.com/Nicolas-Corbiere/TestProjet/blob/master/output/fig3.svg)
 
-![link to Google](output/fig3.svgR)
+![link to Google](https://github.com/Nicolas-Corbiere/TestProjet/blob/master/output/fig3.todo)
+
