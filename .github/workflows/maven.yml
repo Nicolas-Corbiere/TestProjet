@@ -20,13 +20,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Ls
+    - name: Ls 1
       run:
         ls -la *
     - name: Realization
       run: echo -e "Identified risks\nFunctional specifications\nTechnical specifications" >> realization.txt
     - name: JD&TODO generation 
       run: java -jar JDGenerator-jar-with-dependencies.jar justification/fig3.jd -o output/fig3 -svg -svgR -td realization.txt -rea
+    - name: Ls 2
+      run:
+        ls -la *
     - name: Archive JD&TODO
       uses: actions/upload-artifact@v2
       with: 
@@ -40,7 +43,7 @@ jobs:
     - name: memorise the final result
       run: 
        git config user.name "GitHub Actions";
-       git rm output/*
+       #git rm output/*
        git status; 
        echo -e "--------------";
        git add output/*;
