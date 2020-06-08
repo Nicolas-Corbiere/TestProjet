@@ -54,7 +54,7 @@ jobs:
     - name: memorise the final result
       env:
          my_env_var: "test"
-      if: "$my_env_var" == "test"
+      if: my_env_var == "test"
       run: 
        git config user.name "GitHub Actions";
        git status; 
