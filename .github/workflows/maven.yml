@@ -54,7 +54,7 @@ jobs:
     - name: memorise the final result
       run: 
        git config user.name "GitHub Actions";
-       git rm output/*
+       git rm -r output/*
        git commit -m "rm output";
        git push -v;
        git status; 
