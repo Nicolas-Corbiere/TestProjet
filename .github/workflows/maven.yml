@@ -55,7 +55,9 @@ jobs:
     #test commentaire
       env:
          my_env_var: git status
-      run : echo "$my_env_var"
+      run : 
+        "$my_env_var" = git status
+        echo "$my_env_var"
     - name: memorise the final result
       if: false
       run: 
