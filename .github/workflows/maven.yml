@@ -52,7 +52,7 @@ jobs:
         name: jacoco
         path: target/site/jacoco
     - name: memorise the final result
-      if: false
+      if: echo 'test' == "test"
       run: 
        git config user.name "GitHub Actions";
        git status; 
