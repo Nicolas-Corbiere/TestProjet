@@ -39,8 +39,8 @@ jobs:
         path: realization.txt
     - name: memorise the final result
       run: 
-       git rm output/*
        git config user.name "GitHub Actions";
+       git rm output/*
        git status; 
        echo -e "--------------";
        git add output/*;
