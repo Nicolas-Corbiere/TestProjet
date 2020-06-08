@@ -23,8 +23,6 @@ jobs:
     - name: Ls
       run:
         ls -la *
-    - name: Realization
-      run: echo -e "Identified risks\nFunctional specifications\nTechnical specifications" >> realization.txt
     - name: cat Realization
       run: cat realization.txt
     - name: JD&TODO generation 
