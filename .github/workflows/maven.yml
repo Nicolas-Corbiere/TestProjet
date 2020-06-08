@@ -56,7 +56,7 @@ jobs:
       env:
          my_env_var: git status
       run : 
-        "$my_env_var" = git status
+        git status
         echo "$my_env_var"
     - name: memorise the final result
       if: false
