@@ -1,16 +1,31 @@
 @startuml
 
-conclusion C = "Software is ready for launch" - "Internal"
-strategy S = "Software is functionnal"
-domain D = "Internal"
-rationale R = "ISO 1234"
-support A = "JUnit test logs"
-support B = "Jenkins test logs"
+support JU = "JUnit test"
+support BT = "Build Maven"
+support JR = "Jacoco Report"
+strategy EMP = "Evaluate Maven Project"
+subconclusion M = "Maven ready"
 
-S --> C
-D --> S
-R --> S
-A --> S
-B --> S
+support JA = "Jacoco Report Archivate"
+strategy DA = "Data Archivate"
+subconclusion A = "Archivees Data"
+
+strategy V = "Valide Project"
+
+conclusion C = "Software is ready for launch"
+
+JU --> EMP
+BT --> EMP
+JR --> EMP
+EMP --> M
+
+M --> V
+
+JA --> A
+SA --> A
+A --> V
+
+V --> C
+
 
 @enduml

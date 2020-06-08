@@ -27,10 +27,12 @@ jobs:
     - name: Ls 1
       run:
         ls -la *
-    - name: Realization
-      run: echo -e "Identified risks\nFunctional specifications\nRisk mitigation plan" >> realization.txt
+    - name: Realization part1
+      run: echo -e "JUnit test\Build Maven\nJacoco Report" >> realization.txt
+    - name: Realization part2
+      run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar justification/fig3.jd -o output/fig3 -svg -svgR -td realization.txt -rea
+      run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o output/basic -svg -svgR -td realization.txt -rea
     - name: Ls 2
       run:
         ls -la *
