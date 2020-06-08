@@ -51,7 +51,8 @@ jobs:
       with: 
         name: jacoco
         path: target/site/jacoco
-    - name : test
+    - name : test env
+    #test commentaire
       env:
          my_env_var: git status
       run : echo "$my_env_var"
