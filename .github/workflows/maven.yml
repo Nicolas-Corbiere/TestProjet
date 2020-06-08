@@ -28,7 +28,7 @@ jobs:
       run:
         ls -la *
     - name: Realization part1
-      run: echo -e "JUnit test\Build Maven\nJacoco Report" >> realization.txt
+      run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 

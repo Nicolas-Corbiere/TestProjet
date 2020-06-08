@@ -1,4 +1,4 @@
-Internal
-ISO 1234
-JUnit test logs
-Jenkins test logs
+JUnit test
+Build Maven
+Jacoco Report
+Jacoco Report Archivate

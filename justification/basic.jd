@@ -21,8 +21,8 @@ EMP --> M
 
 M --> V
 
-JA --> A
-SA --> A
+JA --> DA
+DA --> A
 A --> V
 
 V --> C
