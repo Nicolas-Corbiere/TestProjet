@@ -52,6 +52,7 @@ jobs:
         name: jacoco
         path: target/site/jacoco
     - name: memorise the final result
+      if: ${{git status output/ == "On branch master\nYour branch is up to date with 'origin/master'.\n\nnothing to commit, working tree clean"}}
       run: 
        git config user.name "GitHub Actions";
        git status; 
