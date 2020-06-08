@@ -23,8 +23,6 @@ jobs:
     - name: Ls
       run:
         ls -la *
-    - name: cat Realization
-      run: cat realization.txt
     - name: JD&TODO generation 
       run: java -jar JDGenerator-jar-with-dependencies.jar texte/fig3.jd -o output/fig3 -svg -svgR -td -rea realization.txt   
     - name: Archive JD&TODO
