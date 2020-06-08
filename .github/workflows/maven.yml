@@ -51,10 +51,12 @@ jobs:
       with: 
         name: jacoco
         path: target/site/jacoco
-    - name: memorise the final result
+    - name : test
       env:
          my_env_var: "test"
-      if: my_env_var == "test"
+      run : echo my_env_var
+    - name: memorise the final result
+      if: false
       run: 
        git config user.name "GitHub Actions";
        git status; 
