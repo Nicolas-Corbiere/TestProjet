@@ -24,7 +24,7 @@ jobs:
       run:
         ls -la *
     - name: Realization
-      run: echo -e "Identified risks\nFunctional specifications\nTechnical specifications" >> realization.txt
+      run: echo -e "Identified risks\nFunctional specifications\n" >> realization.txt
     - name: JD&TODO generation 
       run: java -jar JDGenerator-jar-with-dependencies.jar justification/fig3.jd -o output/fig3 -svg -svgR -td realization.txt -rea
     - name: Ls 2
