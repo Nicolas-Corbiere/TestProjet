@@ -53,7 +53,7 @@ jobs:
         path: target/site/jacoco
     - name : test
       env:
-         my_env_var: "test"
+         my_env_var: git status
       run : echo "$my_env_var"
     - name: memorise the final result
       if: false
