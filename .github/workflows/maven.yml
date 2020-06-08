@@ -54,7 +54,7 @@ jobs:
     - name : test
       env:
          my_env_var: "test"
-      run : echo my_env_var
+      run : echo "$my_env_var""
     - name: memorise the final result
       if: false
       run: 
