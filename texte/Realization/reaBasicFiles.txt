@@ -1,5 +1,0 @@
-Internal
-ISO 1234
-JUnit test log
-Jenkins test logs!-!texte/basic.jd;Realization
-Software is functionnal!-!dontExit

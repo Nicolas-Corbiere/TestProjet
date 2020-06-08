@@ -1,4 +1,0 @@
-Internal
-ISO 1234
-JUnit test logs
-Jenkins test logs
