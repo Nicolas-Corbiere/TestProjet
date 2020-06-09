@@ -26,7 +26,7 @@ jobs:
       run: mvn test
     - name: set Variable
       run:
-        echo -e "justification/output/" >> varOutput.txt
+        echo -e "justification/" >> varOutput.txt
     - name: Realization part1
       run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
     - name: Realization part2
@@ -35,7 +35,7 @@ jobs:
       run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o justification/output/basic -svg -svgR -td realization.txt -rea
     - name: test varOutput.txt
       run:
-        ls $(cat varOutput.txt)
+        ls $(cat varOutput.txt)output/
     - name: Archive JD&TODO
       uses: actions/upload-artifact@v2
       with: 
