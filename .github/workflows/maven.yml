@@ -46,7 +46,7 @@ jobs:
     #I indicate that "Jacoco Report Archivate" is done if 'arget/site/jacoco' exist
     
     - name: Realization part2
-      run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
+      run: echo -e "Jacoco Report Archivate!-!target/site/jacoco!ref!jacoco" >> realization.txt
       
     #I generate 2 diagrams and a to-do list from "justification/basic.jd" to "justification/output/basic".
     #with the realization file 'realization.txt' which contains all the labels of the nodes done.
@@ -76,7 +76,7 @@ jobs:
        git config user.name "GitHub Actions";
        git status; 
        echo -e "--------------";
-       git diff --quiet && git diff --staged --quiet || (git add $(cat varOutput.txt)*;git commit -m “${COMMIT_MSG}“; git push origin master); 
+       git diff --quiet && git diff --staged --quiet || (git add $(cat varOutput.txt)*;git commit -m "add output "; git push origin master); 
        git status;
        echo -e "--------------";
        
