@@ -15,8 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    env:
-         my_env_var: git status
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
@@ -26,18 +24,18 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Test with Maven
       run: mvn test
-    - name: Ls 1
+    - name: set Variable
       run:
-        ls -la *
+        echo -e "justification/output/" >> varOutput.txt
     - name: Realization part1
       run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
       run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o justification/output/basic -svg -svgR -td realization.txt -rea
-    - name: Ls 2
+    - name: test varOutput.txt
       run:
-        ls -la *
+        ls $(cat varOutput.txt)
     - name: Archive JD&TODO
       uses: actions/upload-artifact@v2
       with: 
@@ -53,10 +51,6 @@ jobs:
       with: 
         name: jacoco
         path: target/site/jacoco
-    - name : test env 1
-      run : 
-        git status
-        echo "$my_env_var"
     - name: memorise the final result
       if: false
       run: 
