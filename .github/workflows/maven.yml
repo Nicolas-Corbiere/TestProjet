@@ -28,6 +28,7 @@ jobs:
     - name: Project execution
       run:
         mvn exec:java -Dexec.mainClass="HelloMain"
+        
     #---------JustificationDiagram-----------
         
     # I define global variables that will be used afterwards
