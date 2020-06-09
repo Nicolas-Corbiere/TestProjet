@@ -28,7 +28,6 @@ jobs:
       run: |
         echo -e "justification/output/" >> varOutput.txt
         echo -e "justification/" >> varInput.txt
-        echo -e "false" >> DoIGenerate.txt
     - name : test
       run: ls -la
     - name: Realization part1
@@ -36,7 +35,7 @@ jobs:
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -svg -svgR -td realization.txt -rea
+      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -svg -svgR -td 
     - name: Archive JD&TODO
       uses: actions/upload-artifact@v2
       with: 

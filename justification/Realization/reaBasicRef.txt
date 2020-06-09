@@ -1,5 +1,5 @@
-Internal!ref!Archi 1
-ISO 1234!-!texte!ref!Archi 1
-JUnit test log
-Jenkins test logs
-Software is functionnal!ref!Archi 2
+JUnit test
+Jacoco Report
+Jacoco Report Archivate
+Build Maven!-!justification/Realization/!number!6;justification!ref!Archi 2
+Data Archivate!ref!Archi 1

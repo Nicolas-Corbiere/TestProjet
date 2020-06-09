@@ -1,4 +1,5 @@
-Internal
-ISO 1234
-JUnit test log
-Jenkins test logs!-!txte!number!5
+JUnit test
+Jacoco Report
+Jacoco Report Archivate
+Build Maven!-!justification/Realization/!number!6;justification
+Data Archivate!-!justification/Realization/!number!5
