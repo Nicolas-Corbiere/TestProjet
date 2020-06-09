@@ -1,9 +1,11 @@
 Requirements list
 
 [X]	JUnit test
-[X]	Jacoco Report
+[ ]	Jacoco Report
+	[ ] dontExist - (not found)
 [X]	Jacoco Report Archivate
-[ ]	Build Maven
+	[X] target/site/jacoco
+[X]	Build Maven
 [ ]	Maven ready
 [X]	Archivees Data
 -----------------------------------------------
