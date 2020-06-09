@@ -1,0 +1,11 @@
+Requirements list
+
+[ ]	JUnit test
+[ ]	Jacoco Report
+[ ]	Jacoco Report Archivate
+[ ]	Build Maven
+[ ]	Maven ready
+[ ]	Archivees Data
+-----------------------------------------------
+[ ]		Software is ready for launch
+-----------------------------------------------

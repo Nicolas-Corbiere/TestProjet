@@ -1,0 +1,14 @@
+Requirements list
+
+[X]	JUnit test
+[X]	Jacoco Report
+[X]	Jacoco Report Archivate
+[X]	Build Maven
+	[X] justification/Realization/reaBasic.txt
+	[X] justification
+[ ]	Maven ready
+	[ ] dontExit - (not found)
+[X]	Archivees Data
+-----------------------------------------------
+[ ]		Software is ready for launch
+-----------------------------------------------
