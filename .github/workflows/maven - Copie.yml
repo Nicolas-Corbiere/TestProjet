@@ -1,18 +1,18 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+#name: Java CI with Maven
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+#on:
+#  push:
+#    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
 
-jobs:
-  build:
+#jobs:
+#  build:
 
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -27,44 +27,9 @@ jobs:
     - name: Project execution
       run:
         mvn exec:java -Dexec.mainClass="HelloMain"
-    - name: set Variable
-      run: |
-        echo -e "justification/output/" >> varOutput.txt
-        echo -e "justification/" >> varInput.txt
-    - name: cat Variable
-      run: |
-        echo -e $(cat varOutput.txt)
-        echo -e $(cat varInput.txt)
-    - name: Realization part1
-      run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
-    - name: Realization part2
-      run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
-    - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -svg -svgR -td 
-    - name: Archive JD&TODO
-      uses: actions/upload-artifact@v2
-      with: 
-        name: GeneratedJD
-        path: justification/output/
-    - name: Archive realization.txt
-      uses: actions/upload-artifact@v2
-      with: 
-        name: GeneratedJD
-        path: realization.txt
     - name: Archive Jacoco report
       uses: actions/upload-artifact@v2
       with: 
         name: jacoco
         path: target/site/jacoco
-    - name: memorise the final result
-      if: false
-      run: 
-       git config user.name "GitHub Actions";
-       git status; 
-       echo -e "--------------";
-       git add $(cat varOutput.txt)*;
-       git commit -m "add output";
-       git status;
-       echo -e "--------------";
-       git push -v;
-       echo -e "--------------";
+    
