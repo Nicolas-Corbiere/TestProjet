@@ -44,7 +44,7 @@ jobs:
     
     - name: Realization part1
       run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
-    #I indicate that "Jacoco Report Archivate" is done if 'arget/site/jacoco' exist
+    #I indicate that "Jacoco Report Archivate" is done if 'target/site/jacoco' exist
     
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco!ref!jacoco" >> realization.txt
