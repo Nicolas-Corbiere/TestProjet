@@ -36,7 +36,8 @@ jobs:
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
-      env: isTrue = cat DoIGenerate.txt
+      env: 
+        isTrue = cat DoIGenerate.txt
       if: "$isTrue" == true
       run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -svg -svgR -td realization.txt -rea
     - name: Archive JD&TODO
@@ -55,7 +56,8 @@ jobs:
         name: jacoco
         path: target/site/jacoco
     - name: memorise the final result
-      env: isTrue = $(cat DoIGenerate.txt)
+      env: 
+        isTrue = $(cat DoIGenerate.txt)
       if: "$isTrue" == true
       run: 
        git config user.name "GitHub Actions";
