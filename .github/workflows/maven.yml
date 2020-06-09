@@ -26,13 +26,14 @@ jobs:
       run: mvn test
     - name: set Variable
       run:
-        echo -e "justification/" >> varOutput.txt
+        echo -e "justification/output/" >> varOutput.txt
+        echo -e "justification/" >> varInput.txt
     - name: Realization part1
-      run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
+      run: echo -e "JUnit test\nBuild Maven\nJacoco Report!-!dontExist" >> realization.txt
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o justification/output/basic -svg -svgR -td realization.txt -rea
+      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -svg -svgR -td realization.txt -rea
     - name: test varOutput.txt
       run:
         ls $(cat varOutput.txt)output/
@@ -52,12 +53,12 @@ jobs:
         name: jacoco
         path: target/site/jacoco
     - name: memorise the final result
-      if: false
+      if: true
       run: 
        git config user.name "GitHub Actions";
        git status; 
        echo -e "--------------";
-       git add justification/output/*;
+       git add $(cat varOutput.txt)*;
        git commit -m "add output";
        git status;
        echo -e "--------------";
