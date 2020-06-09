@@ -31,8 +31,10 @@ jobs:
       run: |
         echo -e "justification/output/" >> varOutput.txt
         echo -e "justification/" >> varInput.txt
-    - name : test
-      run: ls -la
+    - name: cat Variable
+      run: |
+        echo -e $(cat varOutput.txt)
+        echo -e $(cat varInput.txt)
     - name: Realization part1
       run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
     - name: Realization part2
