@@ -29,12 +29,14 @@ jobs:
         echo -e "justification/output/" >> varOutput.txt
         echo -e "justification/" >> varInput.txt
         echo -e "false" >> DoIGenerate.txt
+    - name : test
+      run: ls -la
     - name: Realization part1
       run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
-      env: isTrue = $(cat DoIGenerate.txt)
+      env: isTrue = cat DoIGenerate.txt
       if: "$isTrue" == true
       run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -svg -svgR -td realization.txt -rea
     - name: Archive JD&TODO
