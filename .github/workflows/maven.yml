@@ -36,7 +36,7 @@ jobs:
         echo -e $(cat varOutput.txt)
         echo -e $(cat varInput.txt)
     - name: Realization part1
-      run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
+      run: echo -e "JUnit test\nBuild Maven\nJacoco Report!-!dontExist" >> realization.txt
     - name: Realization part2
       run: echo -e "Jacoco Report Archivate!-!target/site/jacoco" >> realization.txt
     - name: JD&TODO generation 
@@ -57,7 +57,7 @@ jobs:
         name: jacoco
         path: target/site/jacoco
     - name: memorise the final result
-      if: false
+      if: true
       run: 
        git config user.name "GitHub Actions";
        git status; 
