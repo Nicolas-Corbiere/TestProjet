@@ -57,14 +57,14 @@ jobs:
         name: jacoco
         path: target/site/jacoco
     - name: memorise the final result
+      if: false
       run: 
        git config user.name "GitHub Actions";
        git status; 
        echo -e "--------------";
-       git diff --quiet && git diff --staged --quiet || (git add $(cat varOutput.txt)*;git commit -m “${COMMIT_MSG}“; git push origin master)
-       #git add $(cat varOutput.txt)*;
-       #git commit -m "add output";
-       #git status;
-       #echo -e "--------------";
-       #git push -v;
-       #echo -e "--------------";
+       git add $(cat varOutput.txt)*;
+       git commit -m "add output";
+       git status;
+       echo -e "--------------";
+       git push -v;
+       echo -e "--------------";
