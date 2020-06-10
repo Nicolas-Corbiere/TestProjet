@@ -84,7 +84,5 @@ jobs:
        echo -e "--------------";
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
-with:
-  projectBaseDir: my-custom-directory
        
     #---------JustificationDiagram-----------
