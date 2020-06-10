@@ -122,6 +122,4 @@ Requirements list
 
 ```
 
-For more information, see this  of the project 
-
 For a more concrete example, see [TestProjet](https://github.com/Nicolas-Corbiere/TestProjet). Especially its [workflow](https://github.com/Nicolas-Corbiere/TestProjet/blob/master/.github/workflows/maven.yml) who used the same 'basic.jd'. 
