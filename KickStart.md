@@ -41,10 +41,15 @@ V --> C
 @enduml
 ```
 
+
 Then create a workflow file in the ".github\workflows" directory at the beginning of your project.
+
 During CI, you will create an realization.txt file that contains all the labels of completed tasks that do not have children.
-(this will be all the "support" for this example)
+(this will be all the "support" for this example).
+
 You will also create the diagrams and archive them in an artifact that you will find in your Action menu in github.
+
+### .github/workflows/maven.yml
 
 ```
 name: Java CI with Maven
@@ -83,6 +88,8 @@ jobs:
       run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -svg -svgR -td 
 
 ```
+
+## Result 
 
 You'll get this result :
 
