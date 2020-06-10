@@ -115,6 +115,5 @@ Requirements list
 
 ```
 
-For more information, see this : 
-![link to Google](https://github.com/Nicolas-Corbiere/TestProjet/blob/master/.github/workflows/maven.yml)
+For more information, see this ![workflow](https://github.com/Nicolas-Corbiere/TestProjet/blob/master/.github/workflows/maven.yml)
 
