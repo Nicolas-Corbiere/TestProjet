@@ -16,10 +16,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Test with Maven
@@ -82,7 +90,6 @@ jobs:
        git diff --quiet && git diff --staged --quiet || (git add $(cat varOutput.txt)*;git commit -m "add output "; git push origin master); 
        git status;
        echo -e "--------------";
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
+
        
     #---------JustificationDiagram-----------
