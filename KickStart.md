@@ -134,8 +134,8 @@ Requirements list
 [X]	JUnit test
 [X]	Jacoco Report
 [X]	Jacoco Report Archivate - references : jacoco
-    [X] justification/
-    [X] justification/output
+       [X] justification/
+       [X] justification/output
 [X]	Build Maven
 [X]	Maven ready
 [X]	Archivees Data
