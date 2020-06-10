@@ -42,7 +42,7 @@ V --> C
 ```
 
 
-Then create a workflow file in the ".github\workflows" directory at the beginning of your project.
+Then create a workflow file in the ".github/workflows/" directory at the beginning of your project.
 
 During CI, you will create an realization.txt file that contains all the labels of completed tasks that do not have children.
 (this will be all the "support" for this example).
