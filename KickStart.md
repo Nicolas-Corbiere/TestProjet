@@ -86,12 +86,35 @@ jobs:
     #with the realization file 'realization.txt' which contains all the labels of the nodes done.
     - name: JD&TODO generation 
       run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -svg -svgR -td 
+      
+    #I archive my diagrams create during the CI in 'GeneratedJD' artifact
+    - name: Archive JD&TODO
+      uses: actions/upload-artifact@v2
+      with: 
+        name: GeneratedJD
+        path: justification/output/
+    #I archive my 'realization.txt' file create during the CI in 'GeneratedJD' artifact
+    - name: Archive realization.txt
+      uses: actions/upload-artifact@v2
+      with: 
+        name: GeneratedJD
+        path: realization.txt
 
 ```
 
 ## Result 
 
-You'll get this result :
+You'll get this result in your artifact 'GeneratedJD' :
+
+### realizeation.txt
+
+```
+JUnit test
+Build Maven
+Jacoco Report
+Jacoco Report Archivate!-!justification/outuput;justification!ref!jacoco
+```
+
 
 ### basic.svg 
 
