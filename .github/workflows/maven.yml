@@ -43,7 +43,9 @@ jobs:
     #I indicate that "JUnit test","Build Maven" and "Jacoco Report" is done 
     
     - name: Realization part1
-      run: echo -e "JUnit test\nBuild Maven\nJacoco Report" >> realization.txt
+      run: 
+        echo -e "JUnit test" >> realization.txt;
+        echo -e "Build Maven\nJacoco Report" >> realization.txt;
     #I indicate that "Jacoco Report Archivate" is done if 'target/site/jacoco' exist
     
     - name: Realization part2
