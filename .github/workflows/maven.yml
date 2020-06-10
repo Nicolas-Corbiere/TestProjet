@@ -86,7 +86,7 @@ jobs:
        echo -e "--------------";
        
     - name: SonarCloud
-      run: mvn verify sonar:sonar 
+      run: mvn sonar:sonar 
 
        
     #---------JustificationDiagram-----------
