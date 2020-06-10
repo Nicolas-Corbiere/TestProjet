@@ -84,6 +84,9 @@ jobs:
        git diff --quiet && git diff --staged --quiet || (git add $(cat varOutput.txt)*;git commit -m "add output "; git push origin master); 
        git status;
        echo -e "--------------";
+       
+    - name: SonarCloud
+      run: mvn verify sonar:sonar 
 
        
     #---------JustificationDiagram-----------
