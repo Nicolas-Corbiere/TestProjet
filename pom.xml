@@ -4,6 +4,13 @@
   <artifactId>TestProjet</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+   <properties>
+  		<sonar.projectKey>Nicolas-Corbiere_TestProjet</sonar.projectKey>
+  		<sonar.organization>nicolas-corbiere</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  		<sonar.login>149e1f24f1131e110fbe1ea7db58291eb482c69d</sonar.login>
+	</properties>
+	
   	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
