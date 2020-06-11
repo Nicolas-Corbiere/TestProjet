@@ -5,7 +5,7 @@ public class HelloMain {
 		System.out.println();
 		System.out.println("\t" +new Hello().hello);
 		System.out.println();
-		System.out.println();
+		System.out.println("test");
 
 
 	}
