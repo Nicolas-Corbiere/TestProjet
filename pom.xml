@@ -8,7 +8,7 @@
   		<sonar.projectKey>Nicolas-Corbiere_TestProjet</sonar.projectKey>
   		<sonar.organization>nicolas-corbiere</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  		<sonar.login>149e1f24f1131e110fbe1ea7db58291eb482c69d</sonar.login>
+  		<sonar.login>95f1a89b96480f264330b832ed5f374f75182298</sonar.login>
 	</properties>
 	
   	<dependencies>
