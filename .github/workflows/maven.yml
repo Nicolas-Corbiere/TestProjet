@@ -86,9 +86,9 @@ jobs:
        echo -e "--------------";
     - name: Analyze with SonarCloud
       uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
        
     #- name: SonarCloud
     #  run: mvn sonar:sonar 
