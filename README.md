@@ -17,7 +17,7 @@ To visualize the justification of the quality of the project from the continuous
 
 https://github.com/Nicolas-Corbiere/TestProjet/blob/master/justification/jutification_view.md
 
-## See the sonarQube report
+## See the sonarCloud report
 
 
 To visualize the sonarQube report, go here : https://sonarcloud.io/dashboard?id=Nicolas-Corbiere_TestProjet
