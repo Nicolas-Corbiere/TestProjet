@@ -9,7 +9,6 @@
   		<sonar.organization>nicolas-corbiere</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
   		<sonar.login>95f1a89b96480f264330b832ed5f374f75182298</sonar.login>
-  		<sonar.jacoco.reportPath>target/site/jacoco/jacoco.xml</sonar.jacoco.reportPath>
   		<sonar.source>src</sonar.source>
   		<sonar.tests>src/test/</sonar.tests>
 	</properties>
