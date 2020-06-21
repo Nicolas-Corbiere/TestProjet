@@ -1,6 +1,6 @@
 Requirements list
 
-[ ]	Creation of the README
+[X]	Creation of the README
 [X]	Jacoco Report Archivate
 [X]	Build Maven
 [X]	JUnit test
