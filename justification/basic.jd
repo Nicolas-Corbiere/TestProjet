@@ -14,6 +14,17 @@ strategy V = "Valide Project"
 
 conclusion C = "Software is ready for launch"
 
+
+support CRM = "Creation of the README"
+support CRQ = "Creation of the quick start"
+strategy PDOC = "Project documented"
+subconclusion DOCR = "Documentation ready"
+
+CRM --> PDOC 
+CRQ --> PDOC 
+PDOC --> DOCR 
+DOCR --> V
+
 JU --> EMP
 BT --> EMP
 JR --> EMP

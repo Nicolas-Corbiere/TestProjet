@@ -1,0 +1,32 @@
+[  
+    { 
+        "Node":{
+	        "@comment": "The node labeled 'Jacoco Repor' is not optional... ",     
+            "Label":"Jacoco Report",
+            "Reference":"jacoco",
+	        "@comment2": "...the total coverage need to be superior to 10%... ",   
+            "Actions": [
+                "CheckCoverage target/site/jacoco/index.html >= 10", 
+            ],
+            "FilesNumber": [  
+                {   
+         	       "@comment3": "...need to check if of the repertory 'target/site/jacoco/' have 6 files" ,
+                    "Path":"target/site/jacoco/",
+                    "Number":"6"     
+                },
+            ]
+        }
+    },
+    {
+        "Node":{
+	        "@comment": "The node labeled 'Documentation ready' is optional",     
+            "Label":"Documentation ready",
+            "Optional":"true", 
+            "@comment2": "...and need to check the exitance of the file 'README.md'." ,
+            "Files": [  
+                "README.md"
+            ] 
+        }
+    }
+    
+]

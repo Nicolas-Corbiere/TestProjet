@@ -22,10 +22,18 @@ jobs:
       with:
         java-version: 1.8
         
+    #I indicate that "JUnit test" is done 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run:
+        mvn -B package --file pom.xml;
+        echo -e "JUnit test" >> realization.txt;
+        
+    #I indicate that "Build Maven" is done 
     - name: Test with Maven
-      run: mvn test
+      run: 
+        mvn test;
+        echo -e "Build Maven" >> realization.txt;
+
     # I execute my current project
     - name: Project execution
       run:
@@ -42,39 +50,46 @@ jobs:
       run: |
         echo -e $(cat varOutput.txt)
         echo -e $(cat varInput.txt)
-    #I indicate that "JUnit test","Build Maven" and "Jacoco Report" is done 
     
-    - name: Realization part1
-      run: 
-        echo -e "JUnit test" >> realization.txt;
-        echo -e "Build Maven\nJacoco Report" >> realization.txt;
-    #I indicate that "Jacoco Report Archivate" is done if 'target/site/jacoco' exist
-    
-    - name: Realization part2
-      run: echo -e "Jacoco Report Archivate!-!target/site/jacoco!ref!jacoco" >> realization.txt
-      
-    #I generate 2 diagrams and a to-do list from "justification/basic.jd" to "justification/output/basic".
-    #with the realization file 'realization.txt' which contains all the labels of the nodes done.
-    - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -svg -svgR -td 
-     #I archive my diagrams create during the CI in 'GeneratedJD' artifact
-    - name: Archive JD&TODO
-      uses: actions/upload-artifact@v2
-      with: 
-        name: GeneratedJD
-        path: justification/output/
-    #I archive my 'realization.txt' file create during the CI in 'GeneratedJD' artifact
-    - name: Archive realization.txt
-      uses: actions/upload-artifact@v2
-      with: 
-        name: GeneratedJD
-        path: realization.txt
     #I archive my Jacoco report in 'jacoco' artifact
     - name: Archive Jacoco report
       uses: actions/upload-artifact@v2
       with: 
         name: jacoco
         path: target/site/jacoco
+    
+    #I indicate that "Jacoco Report Archivate" ans "Jacoco Report" are done
+    - name: Realization part1
+      run: 
+        echo -e "Jacoco Report Archivate\nJacoco Report" >> realization.txt;
+    
+    #I generate 2 diagrams and a to-do list from "justification/basic.jd" to "justification/output/basic".
+    #with the realization file 'realization.txt'  which contains all the labels of the nodes done,
+    #and the information file 'info.json' which contains all additional and verifiable information.
+    - name: JD&TODO generation 
+      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -info $(cat varInput.txt)info.json -svg -svgR -td 
+      
+     #I archive my diagrams create during the CI in 'GeneratedJD' artifact
+    - name: Archive JD&TODO
+      uses: actions/upload-artifact@v2
+      with: 
+        name: GeneratedJD
+        path: justification/output/
+        
+    #I archive my 'realization.txt' file create during the CI in 'GeneratedJD' artifact
+    - name: Archive realization.txt
+      uses: actions/upload-artifact@v2
+      with: 
+        name: GeneratedJD
+        path: realization.txt
+        
+    #I archive my 'info.json' file in 'GeneratedJD' artifact
+    - name: Archive realization.txt
+      uses: actions/upload-artifact@v2
+      with: 
+        name: GeneratedJD
+        path: justification/info.json
+        
     #I memorize all my files contained in the output directory 
     - name: memorise the final result
       run: 
@@ -92,9 +107,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-       
-
-    
     
           
     #---------JustificationDiagram-----------
