@@ -1,11 +1,16 @@
 Requirements list
 
-[X]	JUnit test
-[X]	Jacoco Report
-[X]	Jacoco Report Archivate - references : jacoco
-	[X] target/site/jacoco
+[ ]	Creation of the README
+[X]	Jacoco Report Archivate
 [X]	Build Maven
+[X]	JUnit test
+[X]	Jacoco Report - reference : jacoco
+	[x] target/site/jacoco/ (6 Files found)
+	[x] Current coverage is 18, it's >= 10
 [X]	Maven ready
+[ ]	Creation of the quick start
+[ ]	Documentation ready (optional) 
+	[X] README.md
 [X]	Archivees Data
 -----------------------------------------------
 [X]		Software is ready for launch
