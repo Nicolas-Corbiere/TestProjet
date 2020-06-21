@@ -103,7 +103,7 @@ jobs:
     #I analyse the quality of my project
     - name: Analyze with SonarCloud
       run: 
-       mvn -B verify sonar:sonar -Dsonar.projectKey=Nicolas-Corbiere_TestProjet -Dsonar.organization=nicolas-corbiere -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=95f1a89b96480f264330b832ed5f374f75182298
+       mvn -B verify sonar:sonar 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
