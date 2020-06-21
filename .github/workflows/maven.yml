@@ -26,7 +26,10 @@ jobs:
     - name: Build with Maven
       run:
         mvn -B package --file pom.xml;
+        echo -e "Creation of the README" >> realization.txt;
         echo -e "JUnit test" >> realization.txt;
+        
+    # echo -e "Creation of the quick start" >> realization.txt;
         
     #I indicate that "Build Maven" is done 
     - name: Test with Maven
