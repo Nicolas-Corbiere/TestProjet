@@ -1,10 +1,10 @@
-# KickStart for 'JustificationDiagram' project
+# Quick Start for 'JustificationDiagram' project
 
 First, [download the jar file](https://github.com/MireilleBF/JustificationDiagram/releases/tag/V1.2) in your own project.
 
 I advice you to create a repertory 'justification' were you will put all your file '.jd' and a repertory 'output'.
 
-For the example create this 'basic.jd' in this 'justification/'.
+For the example, create this justification pattern "basic.jd" in the "justification/" directory.
 
 ## basic.jd
 ```
@@ -108,7 +108,7 @@ For the example create this 'action.json' in 'justification/'.
 
 Then create a workflow file in the ".github/workflows/" directory at the beginning of your project.
 
-During CI, you will create an realization.txt file that contains all the labels of completed tasks that do not have children.
+During CI, you will create a realization.txt file that contains all the labels of completed tasks that do not have children
 (this will be all the "support" for this example).
 
 You will also create the diagrams and archive them in an artifact that you will find in your Action menu in github.
