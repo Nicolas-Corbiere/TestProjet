@@ -20,7 +20,7 @@ https://github.com/Nicolas-Corbiere/TestProjet/blob/master/justification/jutific
 ## See the sonarCloud report
 
 
-To visualize the sonarQube report, go here : https://sonarcloud.io/dashboard?id=Nicolas-Corbiere_TestProjet
+To visualize the SonarCloud report, go here : https://sonarcloud.io/dashboard?id=Nicolas-Corbiere_TestProjet
 
 (Don't work with Microsoft Edge)
 
