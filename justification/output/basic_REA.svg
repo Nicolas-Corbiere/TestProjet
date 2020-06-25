@@ -12,8 +12,8 @@
 <!-- V -->
 <g id="node2" class="node">
 <title>V</title>
-<polygon fill="#a2cd5a" stroke="#0000cd" points="623.3038,-252 464.3861,-252 434.8758,-216 593.7935,-216 623.3038,-252"/>
-<text text-anchor="middle" x="529.0898" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#0000cd">Valide Project</text>
+<polygon fill="#a2cd5a" stroke="#cd0000" points="623.3038,-252 464.3861,-252 434.8758,-216 593.7935,-216 623.3038,-252"/>
+<text text-anchor="middle" x="529.0898" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#cd0000">Valide Project</text>
 </g>
 <!-- A&#45;&gt;V -->
 <g id="edge1" class="edge">
@@ -24,8 +24,8 @@
 <!-- C -->
 <g id="node3" class="node">
 <title>C</title>
-<path fill="#bfbfbf" stroke="#0000cd" d="M604.1865,-324C604.1865,-324 453.9931,-324 453.9931,-324 447.9931,-324 441.9931,-318 441.9931,-312 441.9931,-312 441.9931,-300 441.9931,-300 441.9931,-294 447.9931,-288 453.9931,-288 453.9931,-288 604.1865,-288 604.1865,-288 610.1865,-288 616.1865,-294 616.1865,-300 616.1865,-300 616.1865,-312 616.1865,-312 616.1865,-318 610.1865,-324 604.1865,-324"/>
-<text text-anchor="middle" x="529.0898" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#0000cd">Software is ready for launch</text>
+<path fill="#bfbfbf" stroke="#cd0000" d="M604.1865,-324C604.1865,-324 453.9931,-324 453.9931,-324 447.9931,-324 441.9931,-318 441.9931,-312 441.9931,-312 441.9931,-300 441.9931,-300 441.9931,-294 447.9931,-288 453.9931,-288 453.9931,-288 604.1865,-288 604.1865,-288 610.1865,-288 616.1865,-294 616.1865,-300 616.1865,-300 616.1865,-312 616.1865,-312 616.1865,-318 610.1865,-324 604.1865,-324"/>
+<text text-anchor="middle" x="529.0898" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#cd0000">Software is ready for launch</text>
 </g>
 <!-- V&#45;&gt;C -->
 <g id="edge2" class="edge">
