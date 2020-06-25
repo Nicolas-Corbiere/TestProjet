@@ -24,6 +24,17 @@ strategy V = "Valide Project"
 
 conclusion C = "Software is ready for launch"
 
+
+support CRM = "Creation of the README"
+support CRQ = "Creation of the quick start"
+strategy PDOC = "Project documented"
+subconclusion DOCR = "Documentation ready"
+
+CRM --> PDOC 
+CRQ --> PDOC 
+PDOC --> DOCR 
+DOCR --> V
+
 JU --> EMP
 BT --> EMP
 JR --> EMP
@@ -39,6 +50,59 @@ V --> C
 
 
 @enduml
+```
+
+
+## action.json
+
+You will also need an action file which will contain all the additional information and information to be checked for each of your steps
+
+For the example create this 'action.json' in 'justification/'.
+
+
+```
+
+[  
+    { 
+        "Node":{
+	        "@comment": "The node labeled 'Jacoco Repor' has 'jacoco' for reference...",
+            "Label":"Jacoco Report",
+            "Reference":"jacoco",
+	        "@comment2": "...the total coverage need to be superior to 10%... ",   
+            "Actions": [
+                "CheckCoverage target/site/jacoco/index.html >= 10", 
+            ],
+            "FilesNumber": [  
+                {   
+         	       "@comment3": "...need to check if of the repertory 'target/site/jacoco/' have 6 files" ,
+                    "Path":"target/site/jacoco/",
+                    "Number":"6"     
+                },
+            ]
+        }
+    },
+    {
+        "Node":{
+	        "@comment": "The node labeled 'Documentation ready' is optional.",     
+            "Label":"Documentation ready",
+            "Optional":"true", 
+        }
+    },
+    {
+        "Node":{
+	        "@comment": "The node labeled 'Creation of the README'...",     
+            "Label":"Creation of the README",
+            "@comment2": "...need to check the exitance of the file 'README.md'." ,
+            "Files": [  
+                "README.md"
+            ] 
+        }
+    }
+    
+    
+    
+]
+
 ```
 
 
@@ -80,12 +144,12 @@ jobs:
         
     #I indicate that "Jacoco Report Archivate" is done if 'justification/' and 'justification/outuput' exist
     - name: Realization part2
-      run: echo -e "Jacoco Report Archivate!-!justification/outuput;justification!ref!jacoco" >> realization.txt
+      run: echo -e "Jacoco Report Archivate" >> realization.txt
     
     #I generate 2 diagrams and a to-do list from "justification/basic.jd" to "justification/output/basic".
     #with the realization file 'realization.txt' which contains all the labels of the nodes done.
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -svg -svgR -td 
+      run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o justification/output/basic -rea realization.txt -info justification/action.jd  -svg -svgR -td 
       
     #I archive my diagrams create during the CI in 'GeneratedJD' artifact
     - name: Archive JD&TODO
@@ -112,7 +176,7 @@ You'll get this result in your artifact 'GeneratedJD' :
 JUnit test
 Build Maven
 Jacoco Report
-Jacoco Report Archivate!-!justification/outuput;justification!ref!jacoco
+Jacoco Report Archivate
 ```
 
 
@@ -131,15 +195,19 @@ Jacoco Report Archivate!-!justification/outuput;justification!ref!jacoco
 ```
 Requirements list
 
-[X]	JUnit test
-[X]	Jacoco Report
-[X]	Jacoco Report Archivate - references : jacoco
-        [X] justification/
-        [X] justification/output
+[X]	Creation of the README
+	[X] README.md
+[X]	Jacoco Report Archivate
 [X]	Build Maven
+[X]	JUnit test
+[X]	Jacoco Report - reference : jacoco
+	[x] target/site/jacoco/ (6 Files found)
+	[x] Current coverage is 18, it's >= 10
 [X]	Maven ready
+[ ]	Creation of the quick start
+[ ]	Documentation ready (optional) 
 [X]	Archivees Data
---------------------------------------------
+-----------------------------------------------
 [X]		Software is ready for launch
 -----------------------------------------------
 

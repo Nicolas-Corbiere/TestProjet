@@ -1,7 +1,7 @@
 [  
     { 
         "Node":{
-	        "@comment": "The node labeled 'Jacoco Repor' is not optional... ",     
+	        "@comment": "The node labeled 'Jacoco Repor' has 'jacoco' for reference...",
             "Label":"Jacoco Report",
             "Reference":"jacoco",
 	        "@comment2": "...the total coverage need to be superior to 10%... ",   
