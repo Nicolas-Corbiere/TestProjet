@@ -65,16 +65,16 @@ For the example create this 'action.json' in 'justification/'.
 [  
     { 
         "Node":{
-	        "@comment": "The node labeled 'Jacoco Repor' has 'jacoco' for reference...",
+	    "@comment": "The node labeled 'Jacoco Repor' has 'jacoco' for reference...",
             "Label":"Jacoco Report",
             "Reference":"jacoco",
-	        "@comment2": "...the total coverage need to be superior to 10%... ",   
+	    "@comment2": "...the total coverage need to be superior to 10%... ",   
             "Actions": [
                 "CheckCoverage target/site/jacoco/index.html >= 10", 
             ],
             "FilesNumber": [  
                 {   
-         	       "@comment3": "...need to check if of the repertory 'target/site/jacoco/' have 6 files" ,
+         	    "@comment3": "...need to check if of the repertory 'target/site/jacoco/' have 6 files" ,
                     "Path":"target/site/jacoco/",
                     "Number":"6"     
                 },
@@ -83,14 +83,14 @@ For the example create this 'action.json' in 'justification/'.
     },
     {
         "Node":{
-	        "@comment": "The node labeled 'Documentation ready' is optional.",     
+	    "@comment": "The node labeled 'Documentation ready' is optional.",     
             "Label":"Documentation ready",
             "Optional":"true", 
         }
     },
     {
         "Node":{
-	        "@comment": "The node labeled 'Creation of the README'...",     
+	    "@comment": "The node labeled 'Creation of the README'...",     
             "Label":"Creation of the README",
             "@comment2": "...need to check the exitance of the file 'README.md'." ,
             "Files": [  
