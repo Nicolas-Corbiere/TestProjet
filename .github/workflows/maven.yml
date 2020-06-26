@@ -68,9 +68,9 @@ jobs:
     
     #I generate 2 diagrams and a to-do list from "justification/basic.jd" to "justification/output/basic".
     #with the realization file 'realization.txt'  which contains all the labels of the nodes done,
-    #and the information file 'info.json' which contains all additional and verifiable information.
+    #and the action file 'action.json' which contains all additional and verifiable information.
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -info $(cat varInput.txt)info.json -svg -svgR -td 
+      run: java -jar JDGenerator-jar-with-dependencies.jar $(cat varInput.txt)basic.jd -o $(cat varOutput.txt)basic -rea realization.txt -act $(cat varInput.txt)action.json -svg -svgR -td 
       
      #I archive my diagrams create during the CI in 'GeneratedJD' artifact
     - name: Archive JD&TODO
@@ -91,7 +91,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: GeneratedJD
-        path: justification/info.json
+        path: justification/action.json
         
     #I memorize all my files contained in the output directory 
     - name: memorise the final result
