@@ -149,7 +149,7 @@ jobs:
     #I generate 2 diagrams and a to-do list from "justification/basic.jd" to "justification/output/basic".
     #with the realization file 'realization.txt' which contains all the labels of the nodes done.
     - name: JD&TODO generation 
-      run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o justification/output/basic -rea realization.txt -info justification/action.jd  -svg -svgR -td 
+      run: java -jar JDGenerator-jar-with-dependencies.jar justification/basic.jd -o justification/output/basic -rea realization.txt -act justification/action.jd  -svg -svgR -td 
       
     #I archive my diagrams create during the CI in 'GeneratedJD' artifact
     - name: Archive JD&TODO
