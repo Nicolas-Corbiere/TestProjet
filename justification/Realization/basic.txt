@@ -1,0 +1,5 @@
+Creation of the README
+Build Maven
+JUnit test
+Jacoco Report Archivate
+Jacoco Report

@@ -1,4 +1,0 @@
-JUnit test
-Jacoco Report
-Jacoco Report Archivate
-Build Maven

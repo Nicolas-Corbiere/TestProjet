@@ -1,5 +1,0 @@
-JUnit test
-Jacoco Report
-Jacoco Report Archivate
-Build Maven!-!justification/Realization/reaBasic.txt;justification
-Maven ready!-!dontExit

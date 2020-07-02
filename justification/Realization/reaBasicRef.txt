@@ -1,5 +1,0 @@
-JUnit test
-Jacoco Report
-Jacoco Report Archivate
-Build Maven!-!justification/Realization/!number!6;justification!ref!Archi 2
-Data Archivate!ref!Archi 1
