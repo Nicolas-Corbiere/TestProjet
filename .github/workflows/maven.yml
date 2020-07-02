@@ -22,7 +22,7 @@ jobs:
       with:
         java-version: 1.8
         
-    #I indicate that "JUnit test" is done 
+    #I indicate that "Build Maven" is done 
     - name: Build with Maven
       run:
         mvn -B package --file pom.xml;
@@ -32,7 +32,7 @@ jobs:
         
     # echo -e "Creation of the quick start" >> realization.txt;
         
-    #I indicate that "Build Maven" is done 
+    #I indicate that "JUnit test" is done 
     - name: Test with Maven
       run: 
         mvn test;
