@@ -27,7 +27,8 @@ jobs:
       run:
         mvn -B package --file pom.xml;
         echo -e "Creation of the README" >> realization.txt;
-        echo -e "JUnit test" >> realization.txt;
+        echo -e "Build Maven" >> realization.txt;
+
         
     # echo -e "Creation of the quick start" >> realization.txt;
         
@@ -35,7 +36,8 @@ jobs:
     - name: Test with Maven
       run: 
         mvn test;
-        echo -e "Build Maven" >> realization.txt;
+        echo -e "JUnit test" >> realization.txt;
+
 
     # I execute my current project
     - name: Project execution
